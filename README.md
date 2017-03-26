@@ -3,4 +3,4 @@
 
 # Design Goals
 
-The idea behind this project is to build the simplest possable UFO font editor, in as few lines of Python as possible.  
+The idea behind this project is to build a simple UFO font editor.
