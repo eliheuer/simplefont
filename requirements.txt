@@ -1,0 +1,10 @@
+pyqt5
+fonttools
+ufoLib
+defcon
+defconQt
+ufo-extractor
+ufo2ft
+booleanOperations
+hsluv
+brotli
