@@ -117,7 +117,7 @@ def FilterSelectionFactory(glyph):
 
 
 def SelectedContoursQPainterPathFactory(glyph):
-    copyGlyph = glyph.getRepresentation("TruFont.FilterSelection")
+    copyGlyph = glyph.getRepresentation("SimpleFont.FilterSelection")
     path = copyGlyph.getRepresentation("defconQt.NoComponentsQPainterPath")
     return path
 

@@ -81,7 +81,7 @@ def _spitLayoutTable(face, tag, layoutTables):
 class LayoutEngine(BaseObject):
     changeNotificationName = "LayoutEngine.Changed"
     representationFactories = {
-        "TruFont.layoutEngine.tables": dict(
+        "SimpleFont.layoutEngine.tables": dict(
             factory=_layoutEngineOTLTablesRepresentationFactory,
             destructiveNotifications=("LayoutEngine._DestroyCachedTables")
         )
@@ -115,7 +115,7 @@ class LayoutEngine(BaseObject):
             return
         ufo = self.font
         layoutTables, self._glyphOrder = self.getRepresentation(
-            "TruFont.layoutEngine.tables")
+            "SimpleFont.layoutEngine.tables")
 
         face = hb.Face.create_for_tables(
             _spitLayoutTable, layoutTables, None, False)

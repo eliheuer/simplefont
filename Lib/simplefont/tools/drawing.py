@@ -82,7 +82,7 @@ def drawLine(painter, x1, y1, x2, y2, lineWidth=0):
 
 def drawGlyphWithAliasedLines(painter, glyph):
     curvePath, lines = glyph.getRepresentation(
-        "TruFont.SplitLinesQPainterPath")
+        "SimpleFont.SplitLinesQPainterPath")
     painter.drawPath(curvePath)
     for x1, y1, x2, y2 in lines:
         drawLine(painter, x1, y1, x2, y2)
@@ -271,7 +271,7 @@ def drawGlyphFillAndStroke(
     # get the paths
     contourPath = glyph.getRepresentation("defconQt.NoComponentsQPainterPath")
     componentPath, selectedComponentPath, originPts = glyph.getRepresentation(
-        "TruFont.SelectedComponentsQPainterPath")
+        "SimpleFont.SelectedComponentsQPainterPath")
     painter.save()
     # fill
     # contours
@@ -314,7 +314,7 @@ def drawGlyphFillAndStroke(
     # selection
     if drawSelection:
         selectionPath = glyph.getRepresentation(
-            "TruFont.SelectedContoursQPainterPath")
+            "SimpleFont.SelectedContoursQPainterPath")
         pen = QPen(selectionColor)
         pen.setWidthF(3.5 * scale)
         painter.setPen(pen)

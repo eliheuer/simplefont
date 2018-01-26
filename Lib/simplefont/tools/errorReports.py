@@ -15,7 +15,7 @@ def showWarningException(e, message=None):
 
 def exceptionCallback(etype, value, tb):
     title = ":("
-    message = "TruFont has encountered a problem and must shutdown."
+    message = "SimpleFont has encountered a problem and must shutdown."
     _displayException(etype, value, tb, QMessageBox.Critical, title, message)
 
 

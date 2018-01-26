@@ -131,7 +131,7 @@ def deleteUISelection(glyph):
         for point in contour:
             point.selected = not point.selected
         contour.postNotification("Contour.SelectionChanged")
-    cutGlyph = glyph.getRepresentation("TruFont.FilterSelection")
+    cutGlyph = glyph.getRepresentation("SimpleFont.FilterSelection")
     glyph.beginUndoGroup()
     glyph.clear()
     pen = glyph.getPointPen()

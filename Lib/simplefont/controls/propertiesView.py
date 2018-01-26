@@ -636,7 +636,7 @@ class PropertiesWidget(QWidget):
         sY = 1 + .01 * sY
         # apply
         hasSelection = _glyphHasSelection(glyph)
-        representation = "TruFont.FilterSelection" if hasSelection else None
+        representation = "SimpleFont.FilterSelection" if hasSelection else None
         center = self.alignmentWidget.origin(representation=representation)
         bareFunc = glyph.transform
         if hasSelection:
@@ -653,7 +653,7 @@ class PropertiesWidget(QWidget):
             value = -value
         # apply
         hasSelection = _glyphHasSelection(glyph)
-        representation = "TruFont.FilterSelection" if hasSelection else None
+        representation = "SimpleFont.FilterSelection" if hasSelection else None
         origin = self.alignmentWidget.origin(representation=representation)
         bareFunc = glyph.transform
         if hasSelection:
@@ -670,7 +670,7 @@ class PropertiesWidget(QWidget):
             value = -value
         # apply
         hasSelection = _glyphHasSelection(glyph)
-        representation = "TruFont.FilterSelection" if hasSelection else None
+        representation = "SimpleFont.FilterSelection" if hasSelection else None
         origin = self.alignmentWidget.origin(representation=representation)
         bareFunc = glyph.transform
         if hasSelection:

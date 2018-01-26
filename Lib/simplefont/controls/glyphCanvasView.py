@@ -606,7 +606,7 @@ class GlyphCanvasView(GlyphContextView):
                         ret["points"].append((contour, index))
         # components
         for component in reversed(self._glyph.components):
-            path = component.getRepresentation("TruFont.QPainterPath")
+            path = component.getRepresentation("SimpleFont.QPainterPath")
             if func(path, obj):
                 if justOne:
                     return component

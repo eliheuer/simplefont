@@ -53,7 +53,7 @@ class AboutDialog(QDialog):
         titleLabel = QLabel(self)
         titleLabel.setText(self.tr(
             "<p style='color: #353535; font-size: 24pt; font-weight: 250'>"
-            "TruFont Font Editor</p>"
+            "SimpleFont Font Editor</p>"
             "<p style='font-size: 13pt; font-weight: 400'>{} Pristine Wax</p>")
             .format(__version__))
         textLabel = QLabel(self)

@@ -70,7 +70,7 @@ class ExtensionBuilderWindow(QDialog):
 
         self.tfVersionEdit = QLineEdit(self)
         self.tfVersionEdit.setValidator(VersionValidator(self))
-        layout.addRow(self.tr("Requires TruFont:"), self.tfVersionEdit)
+        layout.addRow(self.tr("Requires SimpleFont:"), self.tfVersionEdit)
 
         buttonBox = QDialogButtonBox(
             QDialogButtonBox.Save | QDialogButtonBox.Close, self)
@@ -109,7 +109,7 @@ class ExtensionBuilderWindow(QDialog):
 
         # TODO: switch to directory on platforms that need it
         dialog = QFileDialog(
-            self, self.tr("Save File"), None, "TruFont Extension (*.tfExt)")
+            self, self.tr("Save File"), None, "SimpleFont Extension (*.tfExt)")
         dialog.setAcceptMode(QFileDialog.AcceptSave)
         ok = dialog.exec_()
         if ok:

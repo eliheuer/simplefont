@@ -14,7 +14,7 @@ import types
 _shaper = True
 try:
     import harfbuzz  # noqa
-    from trufont.objects.layoutEngine import LayoutEngine
+    from simplefont.objects.layoutEngine import LayoutEngine
 except ImportError:
     try:
         import compositor  # noqa

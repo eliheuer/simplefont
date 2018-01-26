@@ -111,7 +111,7 @@ class FontWindow(BaseWindow):
         self.glyphCellView.glyphsDropped.connect(self._orderChanged)
         self.glyphCellView.selectionChanged.connect(self._selectionChanged)
         self.glyphCellView.setAcceptDrops(True)
-        self.glyphCellView.setCellRepresentationName("TruFont.GlyphCell")
+        self.glyphCellView.setCellRepresentationName("SimpleFont.GlyphCell")
         self.glyphCellView.setFrameShape(self.glyphCellView.NoFrame)
         self.glyphCellView.setFocus()
 
@@ -673,7 +673,7 @@ class FontWindow(BaseWindow):
         mimeData = QMimeData()
         if self.isGlyphTab():
             glyph = widget.activeGlyph()
-            copyGlyph = glyph.getRepresentation("TruFont.FilterSelection")
+            copyGlyph = glyph.getRepresentation("SimpleFont.FilterSelection")
             packGlyphs = (copyGlyph,)
         else:
             glyphs = self.glyphCellView.glyphs()
@@ -697,7 +697,7 @@ class FontWindow(BaseWindow):
                     pen.getCommands())
             svgGlyphs.append(g)
 
-        mimeData.setData("application/x-trufont-glyph-data",
+        mimeData.setData("application/x-simplefont-glyph-data",
                          pickle.dumps(pickled))
 
         svg = """\
@@ -727,7 +727,7 @@ class FontWindow(BaseWindow):
                 pickled.append(componentGlyph.serialize())
             clipboard = QApplication.clipboard()
             mimeData = QMimeData()
-            mimeData.setData("application/x-trufont-glyph-data",
+            mimeData.setData("application/x-simplefont-glyph-data",
                              pickle.dumps(pickled))
             clipboard.setMimeData(mimeData)
 
@@ -741,9 +741,9 @@ class FontWindow(BaseWindow):
             glyphs = widget.glyphsForIndexes(selection)
         clipboard = QApplication.clipboard()
         mimeData = clipboard.mimeData()
-        if mimeData.hasFormat("application/x-trufont-glyph-data"):
+        if mimeData.hasFormat("application/x-simplefont-glyph-data"):
             data = pickle.loads(mimeData.data(
-                "application/x-trufont-glyph-data"))
+                "application/x-simplefont-glyph-data"))
             if len(data) == len(glyphs):
                 for pickled, glyph in zip(data, glyphs):
                     if isGlyphTab:
@@ -1104,7 +1104,7 @@ class FontWindow(BaseWindow):
 
     def setWindowTitle(self, title):
         if platformSpecific.appNameInTitle():
-            title += " – TruFont"
+            title += " – SimpleFont"
         super().setWindowTitle("[*]{}".format(title))
 
     def sizeHint(self):

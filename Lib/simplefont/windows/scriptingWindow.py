@@ -185,7 +185,7 @@ class ScriptingWindow(QMainWindow):
 
     def setWindowTitle(self, title):
         if platformSpecific.appNameInTitle():
-            title += " – TruFont"
+            title += " – SimpleFont"
         super().setWindowTitle("[*]{}".format(title))
 
     def sizeHint(self):

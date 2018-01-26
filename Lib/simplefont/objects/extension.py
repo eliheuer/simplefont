@@ -20,9 +20,9 @@ _infoProperties = {
     "addToMenu": "a dict of *path*, *name*, *shortcut*",
     "launchAtStartup": "Whether *mainScript* should be launched at startup.",
     "mainScript": "The extension entry-point Python file.",
-    "tfVersionMajor": "The minimum required TruFont major version number.",
-    "tfVersionMinor": "The minimum required TruFont minor version number.",
-    "tfVersionPatch": "The minimum required TruFont patch version number.",
+    "tfVersionMajor": "The minimum required SimpleFont major version number.",
+    "tfVersionMinor": "The minimum required SimpleFont minor version number.",
+    "tfVersionPatch": "The minimum required SimpleFont patch version number.",
     "versionMajor": "The extension major version number.",
     "versionMinor": "The extension minor version number.",
     "versionPatch": "The extension major version number.",
@@ -106,7 +106,7 @@ class TExtension(object):
 
     tfVersion = property(
         _get_tfVersion, _set_tfVersion,
-        doc="The minimum required TruFont version number.")
+        doc="The minimum required SimpleFont version number.")
 
     def _get_version(self):
         if self.versionMajor is None:

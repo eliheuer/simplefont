@@ -8,21 +8,21 @@ from simplefont.representationFactories.glyphViewFactory import (
 
 # TODO: fine-tune the destructive notifications
 _glyphFactories = {
-    "TruFont.SelectedComponentsQPainterPath": (
+    "SimpleFont.SelectedComponentsQPainterPath": (
         SelectedComponentsQPainterPathFactory,
         ("Glyph.Changed", "Glyph.SelectionChanged")),
-    "TruFont.SplitLinesQPainterPath": (
+    "SimpleFont.SplitLinesQPainterPath": (
         SplitLinesQPainterPathFactory, None),
-    "TruFont.FilterSelection": (
+    "SimpleFont.FilterSelection": (
         FilterSelectionFactory, ("Glyph.Changed", "Glyph.SelectionChanged")),
-    "TruFont.SelectedContoursQPainterPath": (
+    "SimpleFont.SelectedContoursQPainterPath": (
         SelectedContoursQPainterPathFactory,
         ("Glyph.Changed", "Glyph.SelectionChanged")),
-    "TruFont.GlyphCell": (
+    "SimpleFont.GlyphCell": (
         TFGlyphCellFactory, None),
 }
 _componentFactories = {
-    "TruFont.QPainterPath": (
+    "SimpleFont.QPainterPath": (
         ComponentQPainterPathFactory, (
             "Component.Changed", "Component.BaseGlyphDataChanged")),
 }

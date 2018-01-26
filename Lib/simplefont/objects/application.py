@@ -208,11 +208,11 @@ class Application(QApplication):
         helpMenu.fetchAction(
             Entries.Help_Documentation,
             lambda: QDesktopServices.openUrl(
-                QUrl("http://trufont.github.io/")))
+                QUrl("https://elih.blog/")))
         helpMenu.fetchAction(
             Entries.Help_Report_An_Issue,
             lambda: QDesktopServices.openUrl(
-                QUrl("https://github.com/trufont/trufont/issues/new")))
+                QUrl("https://github.com/eliheuer/simplefont/issues/new")))
         helpMenu.addSeparator()
         helpMenu.fetchAction(Entries.Help_About, self.about)
 
@@ -393,7 +393,7 @@ class Application(QApplication):
                     tfExtFormat = "info.plist"
                 fileFormats.extend([
                     self.tr("UFO Fonts {}").format("(%s)" % ufoFormat),
-                    self.tr("TruFont Extension {}").format(
+                    self.tr("SimpleFont Extension {}").format(
                         "(%s)" % tfExtFormat)
                 ])
                 supportedFiles += "{} {} ".format(ufoFormat, tfExtFormat)
