@@ -1,14 +1,14 @@
 SimpleFont
 ==========
 
-A simple fork of `TruFont <https://github.com/trufont/trufont>`__. 
+A Simplified Fork of `TruFont <https://github.com/trufont/trufont>`__. 
 
-.. image:: Lib/simplefont/resources/app.png
+.. image:: Lib/simplefont/resources/screenshot.png
 
 Getting started
 ===============
 
-installation instructions
+Installation instructions
 -------------------------
 
 If you have Python3 and Git installed and want to quickly install 
@@ -30,7 +30,8 @@ Or, as separate lines, making modifications when needed:
       pip install --editable .
       simplefont
 
-Python3 and Git Installation Instructions
+
+Python3 and Git installation instructions
 -----------------------------------------
 
 1. Install **Python 3.5** (or later):

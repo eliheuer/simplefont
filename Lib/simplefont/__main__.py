@@ -1,7 +1,8 @@
 from defconQt import representationFactories as baseRepresentationFactories
-from trufont import __version__, representationFactories
-from trufont.objects import settings
-from trufont.objects.application import Application
+from simplefont import __version__, representationFactories
+from simplefont.objects import settings
+from simplefont.objects.application import Application
+from simplefont.tools import errorReports, platformSpecific
 from simplefont.windows.outputWindow import OutputWindow
 from PyQt5.QtCore import (
     Qt, QCommandLineParser, QTranslator, QLocale, QLibraryInfo)
@@ -37,16 +38,16 @@ def main():
     sys.excepthook = errorReports.exceptionCallback
 
     # Qt's translation for itself. May not be installed.
-    qtTranslator = QTranslator()
-    qtTranslator.load("qt_" + QLocale.system().name(),
-                      QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-    app.installTranslator(qtTranslator)
+    # qtTranslator = QTranslator()
+    # qtTranslator.load("qt_" + QLocale.system().name(),
+    #                   QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+    # app.installTranslator(qtTranslator)
 
-    appTranslator = QTranslator()
-    appTranslator.load("simplefont_" + QLocale.system().name(),
-                       os.path.dirname(os.path.realpath(__file__)) +
-                       "/resources")
-    app.installTranslator(appTranslator)
+    # appTranslator = QTranslator()
+    # appTranslator.load("simplefont_" + QLocale.system().name(),
+    #                    os.path.dirname(os.path.realpath(__file__)) +
+    #                    "/resources")
+    # app.installTranslator(appTranslator)
 
     # parse options and open fonts
     parser = QCommandLineParser()
@@ -58,11 +59,14 @@ def main():
         "Command-line parser", "files"), QApplication.translate(
         "Command-line parser", "The UFO files to open."))
     parser.process(app)
+    
     # load menu
     if platformSpecific.useGlobalMenuBar():
         app.fetchMenuBar()
         app.setQuitOnLastWindowClosed(False)
+
     # bootstrap extensions
+
     # process files
     args = parser.positionalArguments()
     if not args:
