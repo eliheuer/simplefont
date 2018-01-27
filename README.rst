@@ -1,9 +1,10 @@
+.. image:: Lib/simplefont/resources/app-small.png
 SimpleFont
 ==========
 
 A Simplified Fork of `TruFont <https://github.com/trufont/trufont>`__. 
 
-.. image:: Lib/simplefont/resources/app-small.png
+.. image:: Lib/simplefont/resources/screenshot.png
 
 Getting started
 ===============
