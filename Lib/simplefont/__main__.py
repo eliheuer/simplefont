@@ -7,7 +7,9 @@ from simplefont.windows.outputWindow import OutputWindow
 from PyQt5.QtCore import (
     Qt, QCommandLineParser, QTranslator, QLocale, QLibraryInfo)
 from PyQt5.QtGui import QIcon
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication
+import qdarkstyle
 import os
 import sys
 
@@ -30,7 +32,8 @@ def main():
     appFont = platformSpecific.UIFontOverride()
     if appFont is not None:
         app.setFont(appFont)
-    app.setStyleSheet(platformSpecific.appStyleSheet())
+    # app.setStyleSheet(platformSpecific.appStyleSheet())
+    app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
     # Install stream redirection
     app.outputWindow = OutputWindow()

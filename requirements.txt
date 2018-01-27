@@ -8,3 +8,4 @@ ufo2ft
 booleanOperations
 hsluv
 brotli
+qdarkstyle
